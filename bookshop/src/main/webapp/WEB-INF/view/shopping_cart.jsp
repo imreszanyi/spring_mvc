@@ -27,7 +27,33 @@
         </ul>
       </div>
       <div id="content">
-        <p class="commmon-error"> Something went wrong, please try again!</p>        
+        <c:choose>
+          <c:when test="${not empty shoppingCartModel.cartItems}">
+            <table>
+              <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Format</th>
+                <th>Quantity</th>
+              </tr>
+
+              <c:forEach var="cartItem" items="${shoppingCartModel.cartItems}">
+                <tr>
+                  <td><a href="<c:url value='${cartItem.book.detailsUrl}' />">${cartItem.book.title}</a></td>
+                  <td>${cartItem.book.author}</td>
+                  <td>${cartItem.book.bookFormat}</td>
+                  <td>${cartItem.quantity}</td>
+                </tr>
+              </c:forEach>
+
+            </table>
+            <a href="<c:url value='${shoppingCartModel.clearShoppingCartUrl}' />">Empty cart</a>
+          </c:when>
+          <c:otherwise>
+            <p>Your shopping cart is empty.</p>
+          </c:otherwise>
+        </c:choose>
+        
       </div>
     </div>
   </div>

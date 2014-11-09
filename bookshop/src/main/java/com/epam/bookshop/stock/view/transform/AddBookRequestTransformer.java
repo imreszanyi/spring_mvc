@@ -22,10 +22,6 @@ public class AddBookRequestTransformer {
 
 	private byte[] getCover(AddBookRequest addBookRequest) throws IOException {
 		byte[] result = null;
-		// TODO: remove for normal behavior
-		if (1 == 1) {
-			throw new IOException();
-		}
 		if (addBookRequest.getCover() != null) {
 			result = addBookRequest.getCover().getBytes();
 		}

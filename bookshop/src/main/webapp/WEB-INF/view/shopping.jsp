@@ -21,12 +21,13 @@
           <li><a href="<c:url value='/' />">Home</a></li>
           <li><a href="<c:url value='/shopping.html' />">Bookstore</a></li>
           <li><a href="<c:url value='/addBookForm.html' />">Manage books</a></li>
+          <li><a href="<c:url value='/showShoppingCart.html' />">View shopping cart</a></li>
         </ul>
       </div>
       <div id="content">
         <form:form modelAttribute="listBooksRequest" method="get">
-            <label for="title">Title</label>
-            <form:input path="title" type="text" id="title" placeholder="Title" />
+          <label for="title">Title</label>
+          <form:input path="title" type="text" id="title" placeholder="Title" />
           <button type="submit">Search</button>
         </form:form>
         <table>
@@ -39,7 +40,7 @@
           <c:forEach var="book" items="${listBooksModel.books}">
             <tr>
               <td><a href="<c:url value='${book.detailsUrl}' />">${book.title}</a></td>
-              <td>${book.author}</td>              
+              <td>${book.author}</td>
               <td>${book.bookFormat}</td>
             </tr>
           </c:forEach>
