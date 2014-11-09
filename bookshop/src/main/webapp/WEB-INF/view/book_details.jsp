@@ -29,6 +29,10 @@
         <p>${bookDetailsModel.bookSummary.author}</p>
         <h2>Synopsis</h2>
         <p>${bookDetailsModel.bookDetails.synopsis}</p>
+        <c:if test="${not empty bookDetailsModel.bookDetails.coverUrl}">
+          <h2>Cover</h2>
+          <img src="<c:url value='${bookDetailsModel.bookDetails.coverUrl}' />" />
+        </c:if>
       </div>
     </div>
   </div>

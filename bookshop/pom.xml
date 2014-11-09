@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>springmvc-training</groupId>
   <artifactId>bookshop</artifactId>
-  <version>lab-7</version>
+  <version>lab-8</version>
   <packaging>war</packaging>
 
   <properties>
