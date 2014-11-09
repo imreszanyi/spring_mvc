@@ -21,6 +21,12 @@ div.form-group input,textarea,select{
     color: red;
 }
 
+.commmon-error {
+    color: red;
+    font-weight: bold;
+    font-size: x-large;
+}
+
 div.language-selector {
 	float:right;
 }
