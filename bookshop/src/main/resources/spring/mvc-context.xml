@@ -30,16 +30,27 @@
 
   <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
 
+  <bean id="themeSource" class="org.springframework.ui.context.support.ResourceBundleThemeSource">
+    <property name="basenamePrefix" value="theme.theme-" />
+  </bean>
+
+  <bean id="themeResolver" class="org.springframework.web.servlet.theme.SessionThemeResolver">
+    <property name="defaultThemeName" value="common" />
+  </bean>
+
   <mvc:interceptors>
     <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
       <property name="paramName" value="#{T(com.epam.bookshop.home.view.support.LocalizationUrlBuilder).LANGUAGE_PARAM_NAME}" />
+    </bean>
+    <bean id="themeChangeInterceptor" class="org.springframework.web.servlet.theme.ThemeChangeInterceptor">
+      <property name="paramName" value="theme" />
     </bean>
   </mvc:interceptors>
 
   <mvc:resources location="/WEB-INF/assets/" mapping="/assets/**" />
 
   <bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver" />
-  
+
   <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
     <property name="defaultErrorView" value="common_error" />
   </bean>
