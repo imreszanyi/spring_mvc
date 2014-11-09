@@ -18,10 +18,12 @@ public class BookEntityTransformer {
 		return result;
 	}
 
-	private Book transformBookEntity(BookEntity book) {
+	public Book transformBookEntity(BookEntity book) {
 		Book result = new Book();
 		result.setAuthor(book.getAuthor());
 		result.setTitle(book.getTitle());
+		result.setBookId(book.getId());
+		result.setSynopsis(book.getSynopsis());
 		return result;
 	}
 }

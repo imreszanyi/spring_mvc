@@ -22,6 +22,18 @@ public class BookSearchService {
 		this.bookEntityTransformer = bookEntityTransformer;
 	}
 
+	public Book findBook(Long bookId) {
+		return transformBookEntity(doFindBook(bookId));
+	}
+
+	private Book transformBookEntity(BookEntity book) {
+		return bookEntityTransformer.transformBookEntity(book);
+	}
+
+	private BookEntity doFindBook(Long bookId) {
+		return bookDao.findOne(bookId);
+	}
+
 	public List<Book> listBooks() {
 		return transformBookEntities(findBookEntities());
 	}

@@ -15,6 +15,7 @@ import com.epam.bookshop.shopping.view.transform.BookTransformer;
 
 @Controller
 public class ListBooksController {
+	public static final String REQUEST_MAPPING = "/shopping.html";
 	private BookSearchService bookSearchService;
 	private BookTransformer bookTransformer;
 
@@ -32,13 +33,13 @@ public class ListBooksController {
 		return initListBooksModel(bookViews);
 	}
 
-	@RequestMapping("/shopping.html")
+	@RequestMapping(REQUEST_MAPPING)
 	public String showBooks() {
 		return "shopping";
 	}
 
 	private List<BookSummaryView> transformBooks(List<Book> books) {
-		return bookTransformer.transformBooks(books);
+		return bookTransformer.transformBooksToSummaries(books);
 	}
 
 	private ListBooksModel initListBooksModel(List<BookSummaryView> bookViews) {
