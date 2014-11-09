@@ -1,32 +1,43 @@
 package com.epam.bookshop.stock.view.model;
 
+import com.epam.bookshop.book.domain.BookFormat;
+
 public class AddBookRequest {
-    private String title;
-    private String author;
-    private String synopsis;
+	private String title;
+	private String author;
+	private String synopsis;
+	private BookFormat format;
 
-    public String getTitle() {
-        return title;
-    }
+	public String getTitle() {
+		return title;
+	}
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
-    public String getAuthor() {
-        return author;
-    }
+	public String getAuthor() {
+		return author;
+	}
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
+	public void setAuthor(String author) {
+		this.author = author;
+	}
 
-    public String getSynopsis() {
-        return synopsis;
-    }
+	public String getSynopsis() {
+		return synopsis;
+	}
 
-    public void setSynopsis(String synopsis) {
-        this.synopsis = synopsis;
-    }
+	public void setSynopsis(String synopsis) {
+		this.synopsis = synopsis;
+	}
+
+	public BookFormat getFormat() {
+		return format;
+	}
+
+	public void setFormat(BookFormat format) {
+		this.format = format;
+	}
 
 }

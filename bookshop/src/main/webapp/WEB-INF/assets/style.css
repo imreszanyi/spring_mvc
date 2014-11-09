@@ -13,7 +13,7 @@ div.form-group {
 	min-width: 300px;
 }
 
-div.form-group input,textarea{
+div.form-group input,textarea,select{
 	float: right;
 }
 

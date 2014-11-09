@@ -1,10 +1,12 @@
 package com.epam.bookshop.shopping.view.model;
 
+
 public class BookSummaryView {
 	private Long bookId;
 	private String title;
 	private String author;
 	private String detailsUrl;
+	private String bookFormat;
 
 	public Long getBookId() {
 		return bookId;
@@ -36,6 +38,14 @@ public class BookSummaryView {
 
 	public void setDetailsUrl(String detailsUrl) {
 		this.detailsUrl = detailsUrl;
+	}
+
+	public String getBookFormat() {
+		return bookFormat;
+	}
+
+	public void setBookFormat(String bookFormat) {
+		this.bookFormat = bookFormat;
 	}
 
 }

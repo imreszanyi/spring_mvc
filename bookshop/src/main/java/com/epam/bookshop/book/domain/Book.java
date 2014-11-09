@@ -6,6 +6,7 @@ public class Book {
 	private String title;
 	private String author;
 	private String synopsis;
+	private BookFormat format;
 
 	public Long getBookId() {
 		return bookId;
@@ -37,6 +38,14 @@ public class Book {
 
 	public void setSynopsis(String synopsis) {
 		this.synopsis = synopsis;
+	}
+
+	public BookFormat getFormat() {
+		return format;
+	}
+
+	public void setFormat(BookFormat format) {
+		this.format = format;
 	}
 
 }

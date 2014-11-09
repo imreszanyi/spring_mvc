@@ -33,12 +33,14 @@
           <tr>
             <th>Title</th>
             <th>Author</th>
+            <th>Available format</th>
           </tr>
 
           <c:forEach var="book" items="${listBooksModel.books}">
             <tr>
               <td><a href="<c:url value='${book.detailsUrl}' />">${book.title}</a></td>
-              <td>${book.author}</td>
+              <td>${book.author}</td>              
+              <td>${book.bookFormat}</td>
             </tr>
           </c:forEach>
 

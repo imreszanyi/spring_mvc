@@ -12,6 +12,8 @@ public class AddBookRequestTransformer {
 		result.setAuthor(addBookRequest.getAuthor());
 		result.setSynopsis(addBookRequest.getSynopsis());
 		result.setTitle(addBookRequest.getTitle());
+		result.setFormat(addBookRequest.getFormat());
 		return result;
+
 	}
 }

@@ -15,6 +15,7 @@ public class BookEntity implements Serializable {
 	private String title;
 	private String author;
 	private String synopsis;
+	private String format;
 
 	public Long getId() {
 		return id;
@@ -46,6 +47,14 @@ public class BookEntity implements Serializable {
 
 	public void setSynopsis(String synopsis) {
 		this.synopsis = synopsis;
+	}
+
+	public String getFormat() {
+		return format;
+	}
+
+	public void setFormat(String format) {
+		this.format = format;
 	}
 
 }

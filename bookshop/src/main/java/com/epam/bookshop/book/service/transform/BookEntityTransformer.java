@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.epam.bookshop.book.domain.Book;
+import com.epam.bookshop.book.domain.BookFormat;
 import com.epam.bookshop.book.repository.domain.BookEntity;
 
 @Component
@@ -24,6 +25,7 @@ public class BookEntityTransformer {
 		result.setTitle(book.getTitle());
 		result.setBookId(book.getId());
 		result.setSynopsis(book.getSynopsis());
+		result.setFormat(BookFormat.getByName(book.getFormat()));
 		return result;
 	}
 
@@ -32,6 +34,7 @@ public class BookEntityTransformer {
 		result.setAuthor(book.getAuthor());
 		result.setTitle(book.getTitle());
 		result.setSynopsis(book.getSynopsis());
+		result.setFormat(book.getFormat().name());
 		return result;
 	}
 }

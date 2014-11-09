@@ -34,5 +34,4 @@ public class AddBookPostController {
         redirectAttributes.addFlashAttribute("message", String.format("Book '%s' of '%s' saved!", addBookRequest.getTitle(), addBookRequest.getAuthor()));
         return "redirect:addBookForm.html";
     }
-
 }
