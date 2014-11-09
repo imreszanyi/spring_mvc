@@ -32,11 +32,6 @@ public class ShowBookController {
         return initBookDetailsModel(book);
     }
 
-    @RequestMapping(REQUEST_MAPPING)
-    public String showBooks() {
-        return "book_details";
-    }
-
     private BookDetailsModel initBookDetailsModel(Book book) {
         BookSummaryView summary = bookTransformer.transformBookToSummary(book);
         BookDetailsView details = bookTransformer.transformBookToDetails(book);
@@ -45,6 +40,11 @@ public class ShowBookController {
 
     private Book findBook(Long bookId) {
         return bookSearchService.findBook(bookId);
+    }
+
+    @RequestMapping(REQUEST_MAPPING)
+    public String showBooks() {
+        return "book_details";
     }
 
 }

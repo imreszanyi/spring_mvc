@@ -22,6 +22,11 @@
         </ul>
       </div>
       <div id="content">
+        <form action="<c:url value='/shopping.html' />"  method="get">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" value="${listBooksRequest.title}"/>
+          <button type="submit">Search</button>
+        </form>
         <table>
           <tr>
             <th>Title</th>

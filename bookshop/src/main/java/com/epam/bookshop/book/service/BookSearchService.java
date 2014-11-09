@@ -34,16 +34,26 @@ public class BookSearchService {
 		return bookDao.findOne(bookId);
 	}
 
-	public List<Book> listBooks() {
-		return transformBookEntities(findBookEntities());
+	public List<Book> listBooks(String title) {
+		return transformBookEntities(findBookEntities(formatQuery(title)));
+	}
+
+	private String formatQuery(String title) {
+		String result;
+		if (title == null) {
+			result = "%";
+		} else {
+			result = String.format("%%%s%%", title);
+		}
+		return result;
 	}
 
 	private List<Book> transformBookEntities(Iterable<BookEntity> books) {
 		return bookEntityTransformer.transformBookEntities(books);
 	}
 
-	private Iterable<BookEntity> findBookEntities() {
-		return bookDao.findAll();
+	private Iterable<BookEntity> findBookEntities(String title) {
+		return bookDao.findByTitleIgnoreCaseLike(title);
 	}
 
 }
