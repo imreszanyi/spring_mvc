@@ -6,14 +6,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Welcome</title>
+<title>Shopping</title>
 <link rel="stylesheet" href="http://www.maxdesign.com.au/wp-content/themes/maxdesign/stylesheets/sample.css" type="text/css" media="all">
 </head>
 <body>
   <div id="layout-one-fixed">
     <div id="container">
       <div id="header">
-        <h1>Welcome in ${bookshopName}</h1>
+        <h1>Browse our books</h1>
       </div>
       <div id="navigation">
         <ul>
@@ -22,7 +22,20 @@
         </ul>
       </div>
       <div id="content">
-        <p>Welcome in our brand new webshop!</p>
+        <table>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+          </tr>
+
+          <c:forEach var="book" items="${listBooksModel.books}">
+            <tr>
+              <td>${book.title}</td>
+              <td>${book.author}</td>
+            </tr>
+          </c:forEach>
+
+        </table>
       </div>
     </div>
   </div>

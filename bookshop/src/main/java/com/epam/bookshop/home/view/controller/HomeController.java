@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 
-    @ModelAttribute("bookshopName")
-    public String bookshopName() {
-        return "Bookshop";
-    }
+	@ModelAttribute("bookshopName")
+	public String bookshopName() {
+		return "Bookshop";
+	}
 
-    @RequestMapping("/")
-    public String homepage() {
-        return "homepage";
-    }
+	@RequestMapping("/")
+	public String homepage() {
+		return "homepage";
+	}
 }
