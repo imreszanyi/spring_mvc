@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -19,14 +20,15 @@
         <ul>
           <li><a href="<c:url value='/' />">Home</a></li>
           <li><a href="<c:url value='/shopping.html' />">Bookstore</a></li>
+          <li><a href="<c:url value='/addBookForm.html' />">Manage books</a></li>
         </ul>
       </div>
       <div id="content">
-        <form action="<c:url value='/shopping.html' />"  method="get">
+        <form:form modelAttribute="listBooksRequest" method="get">
             <label for="title">Title</label>
-            <input type="text" id="title" name="title" value="${listBooksRequest.title}"/>
+            <form:input path="title" type="text" id="title" placeholder="Title" />
           <button type="submit">Search</button>
-        </form>
+        </form:form>
         <table>
           <tr>
             <th>Title</th>

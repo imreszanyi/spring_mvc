@@ -26,4 +26,12 @@ public class BookEntityTransformer {
 		result.setSynopsis(book.getSynopsis());
 		return result;
 	}
+
+	public BookEntity transformBookToBookEntity(Book book) {
+		BookEntity result = new BookEntity();
+		result.setAuthor(book.getAuthor());
+		result.setTitle(book.getTitle());
+		result.setSynopsis(book.getSynopsis());
+		return result;
+	}
 }
