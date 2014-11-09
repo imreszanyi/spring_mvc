@@ -16,12 +16,13 @@ import com.epam.bookshop.shopping.view.model.BookSummaryView;
 @Component
 public class BookTransformer {
     private static final String BOOK_QUERY_URL_PATTERN = "%s?bookId=%d";
-    private ConversionService conversionService;
+
+    private ConversionService onversionService;
 
     @Autowired
-    public BookTransformer(ConversionService conversionService) {
+    public BookTransformer(ConversionService onversionService) {
         super();
-        this.conversionService = conversionService;
+        this.onversionService = onversionService;
     }
 
     public List<BookSummaryView> transformBooksToSummaries(List<Book> books) {
@@ -38,7 +39,7 @@ public class BookTransformer {
         result.setTitle(book.getTitle());
         result.setBookId(book.getBookId());
         result.setDetailsUrl(String.format(BOOK_QUERY_URL_PATTERN, ShowBookController.REQUEST_MAPPING, book.getBookId()));
-        result.setBookFormat(conversionService.convert(book.getFormat(), String.class));
+        result.setBookFormat(onversionService.convert(book.getFormat(), String.class));
         return result;
     }
 

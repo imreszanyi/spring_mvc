@@ -27,6 +27,10 @@ div.form-group input,textarea,select{
     font-size: x-large;
 }
 
+div.authentication {
+    float: right;
+}
+
 div.language-selector {
 	float:right;
 }

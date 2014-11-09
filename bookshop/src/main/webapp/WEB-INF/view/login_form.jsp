@@ -8,14 +8,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title></title>
+<title>Welcome</title>
 <link rel="stylesheet" href="<spring:theme code='style'/>" type="text/css" media="all">
 </head>
 <body>
   <div id="layout-one-fixed">
     <div id="container">
       <div id="header">
-        <h1>Add new book</h1>
+        <h1>Welcome in ${homepageModel.bookshopName}</h1>
       </div>
       <div id="navigation">
         <ul>
@@ -25,34 +25,23 @@
           <li><a href="<c:url value='/showShoppingCart.html' />">View shopping cart</a></li>
         </ul>
       </div>
-      <div id="content">
-        <c:choose>
-          <c:when test="${not empty shoppingCartModel.cartItems}">
-            <table>
-              <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Format</th>
-                <th>Quantity</th>
-              </tr>
-
-              <c:forEach var="cartItem" items="${shoppingCartModel.cartItems}">
-                <tr>
-                  <td><a href="<c:url value='${cartItem.book.detailsUrl}' />">${cartItem.book.title}</a></td>
-                  <td>${cartItem.book.author}</td>
-                  <td>${cartItem.book.bookFormat}</td>
-                  <td>${cartItem.quantity}</td>
-                </tr>
-              </c:forEach>
-
-            </table>
-            <a href="<c:url value='${shoppingCartModel.clearShoppingCartUrl}' />">Empty cart</a>
-          </c:when>
-          <c:otherwise>
-            <p>Your shopping cart is empty.</p>
-          </c:otherwise>
-        </c:choose>
-        
+      <div id="content">       
+        <form:form modelAttribute="loginRequest" action="j_spring_security_check">
+          <form:errors  element="div" cssClass="validation-error" />
+          <div class="form-group">
+            <p>
+              <label for="input_username">Username</label>
+              <form:input path="username" id="input_username" placeholder="Username" />
+            </p>
+            <p>
+              <label for="input_password">Password</label>
+              <form:input path="password" id="input_password" placeholder="Password" />
+            </p>
+          </div>
+          <p>
+            <button type="submit" class="btn btn-default">Login</button>
+          </p>
+        </form:form>
       </div>
     </div>
   </div>

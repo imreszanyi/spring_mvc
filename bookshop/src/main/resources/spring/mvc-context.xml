@@ -55,4 +55,5 @@
     <property name="defaultErrorView" value="common_error" />
   </bean>
 
+
 </beans>

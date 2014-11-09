@@ -14,13 +14,24 @@
   <div id="layout-one-fixed">
     <div id="container">
       <div id="header">
+        <div class="authentication">
+          <c:if test="${not empty homepageModel.loginUrl}">
+            <a href="<c:url value='${homepageModel.loginUrl}' />">Login</a>
+          </c:if>
+          <c:if test="${not empty homepageModel.logoutUrl}">
+            <a href="<c:url value='${homepageModel.logoutUrl}' />">Logout</a>
+          </c:if>
+        </div>
+
         <h1>Welcome in ${homepageModel.bookshopName}</h1>
       </div>
       <div id="navigation">
         <ul>
           <li><a href="<c:url value='/' />">Home</a></li>
           <li><a href="<c:url value='/shopping.html' />">Bookstore</a></li>
-          <li><a href="<c:url value='/addBookForm.html' />">Manage books</a></li>
+          <c:if test="${not empty homepageModel.adminUrl}">
+            <li><a href="<c:url value='${homepageModel.adminUrl}' />">Manage books</a></li>
+          </c:if>
           <li><a href="<c:url value='/showShoppingCart.html' />">View shopping cart</a></li>
           <li>
             <div class="language-selector">
