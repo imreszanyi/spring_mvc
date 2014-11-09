@@ -1,0 +1,25 @@
+package com.epam.bookshop.home.view.model;
+
+import java.util.List;
+
+public class HomepageModel {
+	private String bookshopName;
+	private List<LanguageUrlMapping> languageSelectors;
+
+	public String getBookshopName() {
+		return bookshopName;
+	}
+
+	public void setBookshopName(String bookshopName) {
+		this.bookshopName = bookshopName;
+	}
+
+	public List<LanguageUrlMapping> getLanguageSelectors() {
+		return languageSelectors;
+	}
+
+	public void setLanguageSelectors(List<LanguageUrlMapping> languageSelectors) {
+		this.languageSelectors = languageSelectors;
+	}
+
+}

@@ -21,6 +21,10 @@ div.form-group input,textarea,select{
     color: red;
 }
 
+div.language-selector {
+	float:right;
+}
+
 body {
 	margin: 20px;
 	padding: 0;
