@@ -1,11 +1,19 @@
 package com.epam.bookshop.stock.view.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import com.epam.bookshop.book.domain.BookFormat;
 
 public class AddBookRequest {
+	@NotNull
+	@Size(min = 2, max = 255)
 	private String title;
+	@NotNull
+	@Size(min = 2, max = 255)
 	private String author;
 	private String synopsis;
+	@NotNull
 	private BookFormat format;
 
 	public String getTitle() {

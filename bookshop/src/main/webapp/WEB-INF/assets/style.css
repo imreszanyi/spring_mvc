@@ -17,6 +17,10 @@ div.form-group input,textarea,select{
 	float: right;
 }
 
+.validation-error {
+    color: red;
+}
+
 body {
 	margin: 20px;
 	padding: 0;

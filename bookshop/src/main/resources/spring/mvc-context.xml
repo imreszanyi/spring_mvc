@@ -22,6 +22,7 @@
       </set>
     </property>
   </bean>
-
+  
   <mvc:resources location="/WEB-INF/assets/" mapping="/assets/**" />
+
 </beans>

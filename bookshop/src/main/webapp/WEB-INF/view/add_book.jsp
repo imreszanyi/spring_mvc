@@ -28,24 +28,27 @@
           <div class="alert alert-success">${message}</div>
         </c:if>
         <form:form modelAttribute="addBookRequest" action="addBookPost.html">
-          <div class="form-group">
-            <p>
-              <label for="input_title">Title</label>
-              <form:input path="title" id="input_title" placeholder="Title" />
-            </p>
-            <p>
-              <label for="input_author">Author</label>
-              <form:input path="author" id="input_author" placeholder="Author" />
-            </p>
-            <p>
-              <label for="input_format">Format</label>
-              <form:select path="format" id="input_format" items="${addBookFormModel.availableBookFormats}" />
-            </p>
-            <p>
-              <label for="input_synopsis">Synopsis</label>
-              <form:textarea path="synopsis" id="input_synopsis" placeholder="Synopsis" />
-            </p>            
+          <div class="form-group">            
+              <p>
+                <label for="input_title">Title</label>
+                <form:input path="title" id="input_title" placeholder="Title" />
+                <form:errors path="title" element="div" cssClass="validation-error"/>                
+              </p>              
+              <p>
+                <label for="input_author">Author</label>                                
+                <form:input path="author" id="input_author" placeholder="Author" />
+                <form:errors path="author" element="div" cssClass="validation-error" />                
+              </p>
+              <p>
+                <label for="input_format">Format</label>
+                <form:select path="format" id="input_format" items="${addBookFormModel.availableBookFormats}" />
+              </p>
+              <p>
+                <label for="input_synopsis">Synopsis</label>
+                <form:textarea path="synopsis" id="input_synopsis" placeholder="Synopsis" />
+              </p>            
           </div>
+
           <p>
             <button type="submit" class="btn btn-default">Add</button>
           </p>
