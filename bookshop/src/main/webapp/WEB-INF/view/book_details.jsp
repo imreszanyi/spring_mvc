@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Book details</title>
-<link rel="stylesheet" href="http://www.maxdesign.com.au/wp-content/themes/maxdesign/stylesheets/sample.css" type="text/css" media="all">
+<link rel="stylesheet" href="<c:url value='/assets/style.css' />" type="text/css" media="all">
 </head>
 <body>
   <div id="layout-one-fixed">

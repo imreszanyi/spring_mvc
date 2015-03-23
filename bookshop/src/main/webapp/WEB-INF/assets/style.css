@@ -17,6 +17,21 @@ div.form-group input,textarea,select{
 	float: right;
 }
 
+.validation-error {
+    color: red;
+}
+
+.commmon-error {
+    color: red;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+div.language-selector {
+	float:right;
+}
+
+>>>>>>> origin/lab-3
 body {
 	margin: 20px;
 	padding: 0;
