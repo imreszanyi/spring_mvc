@@ -23,6 +23,15 @@
         </ul>
       </div>
       <div id="content">
+      	<form action="<c:url value='/users.html' />"  method="get">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="${listUsersRequest.name}"/>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" value="${listUsersRequest.email}"/>
+            
+        	<button type="submit">Search</button>
+        </form>
+      
         <table>
           <tr>
             <th>Name</th>

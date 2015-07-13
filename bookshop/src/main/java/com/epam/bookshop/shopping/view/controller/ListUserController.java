@@ -7,6 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.epam.bookshop.book.domain.Book;
+import com.epam.bookshop.shopping.view.model.ListBooksRequest;
+import com.epam.bookshop.shopping.view.model.ListUserRequest;
 import com.epam.bookshop.shopping.view.model.ListUsersModel;
 import com.epam.bookshop.shopping.view.model.UserSummaryView;
 import com.epam.bookshop.shopping.view.transform.UserTransformer;
@@ -25,8 +28,8 @@ public class ListUserController {
 	}
 
 	@ModelAttribute("listUsersModel")
-	public ListUsersModel createListUsersModel() {
-		List<User> users = listUsers();
+	public ListUsersModel createListUsersModel(ListUserRequest listUserRequest) {
+		List<User> users = listUsers(listUserRequest);
 		List<UserSummaryView> userViews = transformUsers(users);
 		return initListUsersModel(userViews);
 	}
@@ -44,8 +47,9 @@ public class ListUserController {
 		return new ListUsersModel(userViews);
 	}
 
-	private List<User> listUsers() {
-		return userSearchService.listUsers();
+	private List<User> listUsers(ListUserRequest searchUserRequest) {
+		return userSearchService.listUsers(searchUserRequest.getName(), searchUserRequest.getEmail());
 	}
+
 
 }

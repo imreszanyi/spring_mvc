@@ -21,5 +21,6 @@ insert into book(id, title, author) values (default, 'Mother night', 'Kurt Vonne
 
 insert into users(id, name, email, password) values (default, 'joe', 'joe@a.com', '1234');
 insert into users(id, name, email, password) values (default, 'joe2', 'joe2@a.com', '1234');
-insert into users(id, name, email, password) values (default, 'joe3', 'joe3@a.com', '1234');
+insert into users(id, name, email, password) values (default, 'joe3', 'joe3@be.com', '1234');
+insert into users(id, name, email, password) values (default, 'korte', 'joe3@alma.com', '1234');
 

@@ -11,7 +11,7 @@ import com.epam.bookshop.user.repository.domain.UserEntity;
 
 @Component
 public class UserEntityTransformer {
-	public List<User> transformBookEntities(Iterable<UserEntity> users) {
+	public List<User> transformUserEntities(Iterable<UserEntity> users) {
 		List<User> result = new ArrayList<User>();
 		for (UserEntity user : users) {
 			result.add(transformUserEntity(user));
@@ -19,7 +19,7 @@ public class UserEntityTransformer {
 		return result;
 	}
 
-	private User transformUserEntity(UserEntity user) {
+	public User transformUserEntity(UserEntity user) {
 		User result = new User();
 		result.setName(user.getName());
 		result.setEmail(user.getEmail());
