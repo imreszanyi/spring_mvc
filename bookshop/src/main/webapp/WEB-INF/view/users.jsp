@@ -13,7 +13,7 @@
   <div id="layout-one-fixed">
     <div id="container">
       <div id="header">
-        <h1>Browse our books</h1>
+        <h1>Users</h1>
       </div>
       <div id="navigation">
         <ul>
@@ -25,14 +25,14 @@
       <div id="content">
         <table>
           <tr>
-            <th>Title</th>
-            <th>Author</th>
+            <th>Name</th>
+            <th>Email</th>
           </tr>
 
-          <c:forEach var="book" items="${listBooksModel.books}">
+          <c:forEach var="user" items="${listUsersModel.users}">
             <tr>
-              <td>${book.title}</td>
-              <td>${book.author}</td>
+              <td>${user.name}</td>
+              <td>${user.email}</td>
             </tr>
           </c:forEach>
 
