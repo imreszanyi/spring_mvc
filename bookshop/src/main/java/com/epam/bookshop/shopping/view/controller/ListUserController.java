@@ -33,7 +33,7 @@ public class ListUserController {
 
 	@RequestMapping("/users.html")
 	public String showUsers() {
-		return "shopping";
+		return "users";
 	}
 
 	private List<UserSummaryView> transformUsers(List<User> users) {

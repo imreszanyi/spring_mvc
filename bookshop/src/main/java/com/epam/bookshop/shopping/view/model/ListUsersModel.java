@@ -10,7 +10,7 @@ public class ListUsersModel {
 		this.users = users;
 	}
 
-	public List<UserSummaryView> getBooks() {
+	public List<UserSummaryView> getUsers() {
 		return users;
 	}
 }

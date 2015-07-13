@@ -2,6 +2,7 @@ package com.epam.bookshop.user.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.epam.bookshop.user.domain.User;
@@ -15,6 +16,7 @@ public class UserSearchService {
 	private UserDao userDao;
 	private UserEntityTransformer userEntityTransformer;
 
+	@Autowired
 	public UserSearchService(UserDao userDao, UserEntityTransformer userEntityTransformer) {
 		super();
 		this.userDao = userDao;

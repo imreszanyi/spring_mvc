@@ -29,10 +29,10 @@
             <th>Email</th>
           </tr>
 
-          <c:forEach var="user" items="${listUsersModel.users}">
+          <c:forEach var="users" items="${listUsersModel.users}">
             <tr>
-              <td>${user.name}</td>
-              <td>${user.email}</td>
+              <td>${users.name}</td>
+              <td>${users.email}</td>
             </tr>
           </c:forEach>
 
