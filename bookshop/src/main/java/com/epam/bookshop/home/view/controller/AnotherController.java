@@ -5,15 +5,15 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class HomeController {
-
+public class AnotherController {
+	
 	@ModelAttribute("bookshopName")
 	public String bookshopName() {
-		return "Bookshop";
+		return "BooookShop";
 	}
-
-	@RequestMapping("/a")
-	public String homepage() {
+	
+	@RequestMapping("/")
+	public String second() {
 		return "homepage";
 	}
 }
