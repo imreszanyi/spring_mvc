@@ -19,6 +19,7 @@
         <ul>
           <li><a href="<c:url value='/' />">Home</a></li>
           <li><a href="<c:url value='/shopping.html' />">Bookstore</a></li>
+          <li><a href="<c:url value='/users.html' />">Users</a></li>
         </ul>
       </div>
       <div id="content">

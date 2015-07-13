@@ -6,14 +6,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Welcome</title>
+<title>Shopping</title>
 <link rel="stylesheet" href="<c:url value='/assets/style.css' />" type="text/css" media="all">
 </head>
 <body>
   <div id="layout-one-fixed">
     <div id="container">
       <div id="header">
-        <h1>Welcome in ${bookshopName}</h1>
+        <h1>Users</h1>
       </div>
       <div id="navigation">
         <ul>
@@ -23,7 +23,22 @@
         </ul>
       </div>
       <div id="content">
-        <p>Welcome in our brand new webshop!</p>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>pwd</th>
+          </tr>
+
+          <c:forEach var="users" items="${listUsersModel.users}">
+            <tr>
+              <td>${users.name}</td>
+              <td>${users.email}</td>
+              <td>${users.password}</td>
+            </tr>
+          </c:forEach>
+
+        </table>
       </div>
     </div>
   </div>
