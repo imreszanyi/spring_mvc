@@ -27,12 +27,14 @@
           <tr>
             <th>Name</th>
             <th>Email</th>
+            <th>pwd</th>
           </tr>
 
           <c:forEach var="users" items="${listUsersModel.users}">
             <tr>
               <td>${users.name}</td>
               <td>${users.email}</td>
+              <td>${users.password}</td>
             </tr>
           </c:forEach>
 
