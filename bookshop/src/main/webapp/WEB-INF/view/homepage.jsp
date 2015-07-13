@@ -13,7 +13,7 @@
   <div id="layout-one-fixed">
     <div id="container">
       <div id="header">
-        <h1>Welcome in ${bookshopName}</h1>
+        <h1>Welcome in ${bookshopName}, ${alma}</h1>
       </div>
       <div id="navigation">
         <ul>
