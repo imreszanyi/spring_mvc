@@ -21,7 +21,7 @@ public class UserSearchService {
 		this.userEntityTransformer = userEntityTransformer;
 	}
 	
-	public List<User> listBooks() {
+	public List<User> listUsers() {
 		return transformUserEntities(findUserEntities());
 	}
 
