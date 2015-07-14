@@ -34,13 +34,24 @@ public class AddUserPostController {
     @RequestMapping(value = "/addUserPost.html", method = RequestMethod.POST)
     private String createUser(AddUserRequest addUserRequest, RedirectAttributes redirectAttributes) {
     	
+    	if (addUserRequest.getName().isEmpty()) {
+    		redirectAttributes.addFlashAttribute("message", "enter name");
+    	}
+    	
+    	if (addUserRequest.getEmail().isEmpty()) {
+    		redirectAttributes.addFlashAttribute("message", "enter email");
+    	}
+    	
 	   	if (addUserRequest.getPassword().equals(addUserRequest.getPasswordConfirm())) {
 	        userWriteService.saveUser(addUserRequestTransformer.transformAddUserRequestToUser(addUserRequest));
 	        redirectAttributes.addFlashAttribute("message", String.format("Book '%s' of '%s' saved!", addUserRequest.getName(), addUserRequest.getEmail(), addUserRequest.getPassword()));
-	        return "redirect:addUserForm.html";
 	   	} else {
-	   		return "redirect:addUserForm.html";
+	   		redirectAttributes.addFlashAttribute("message", "passwords don't not match");
 	   	}
+        
+	   	
+	   	return "redirect:addUserForm.html";
+
     }
 	
 }

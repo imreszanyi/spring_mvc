@@ -41,11 +41,11 @@
             </p>
             <p>
               <label for="input_password">Password</label>
-              <form:input path="password" id="input_password" class="form-control" placeholder="Password" />
+              <form:input path="password" type="password" id="input_password" class="form-control" placeholder="Password" />
             </p>
             <p>
               <label for="input_passwordConfirm">Password again</label>
-              <form:input path="passwordConfirm" id="input_passwordConfirm" class="form-control" placeholder="Password confirm" />
+              <form:input path="passwordConfirm" type="password" id="input_passwordConfirm" class="form-control" placeholder="Password confirm" />
             </p>
           </div>
           <p>
