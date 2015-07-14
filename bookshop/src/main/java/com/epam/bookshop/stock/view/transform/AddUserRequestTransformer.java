@@ -13,6 +13,7 @@ public class AddUserRequestTransformer {
 		result.setEmail(addUserRequest.getEmail());
 		result.setPassword(addUserRequest.getPassword());
 		//result.setBirthdate(addUserRequest.getBirthdate());
+		//System.out.println(addUserRequest.getBirthdate().toString());
 		return result;
 	}
 }
