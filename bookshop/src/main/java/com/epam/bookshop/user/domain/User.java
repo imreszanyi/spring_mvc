@@ -1,10 +1,12 @@
 package com.epam.bookshop.user.domain;
 
+import java.util.Date;
+
 public class User {
 	private String name;
 	private String email;
 	private String password;
-	private UserDateFormat birthdate;
+	private Date birthdate;
 	
 	public String getName() {
 		return name;
@@ -25,10 +27,10 @@ public class User {
 		this.password = password;
 	}
 	
-	public UserDateFormat getBirthdate() {
+	public Date getBirthdate() {
 		return birthdate;
 	}
-	public void setBirthdate(UserDateFormat birthdate) {
+	public void setBirthdate(Date birthdate) {
 		this.birthdate = birthdate;
 	}
 	

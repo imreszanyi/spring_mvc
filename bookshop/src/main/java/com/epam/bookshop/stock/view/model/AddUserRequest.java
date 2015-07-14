@@ -1,18 +1,18 @@
 package com.epam.bookshop.stock.view.model;
 
-import com.epam.bookshop.user.domain.UserDateFormat;
+import java.util.Date;
 
 public class AddUserRequest {
 	 private String name;
 	 private String email;
 	 private String password;
-	 private UserDateFormat birthdate;
+	 private Date birthdate;
 	 private String passwordConfirm;
 	 
-	public UserDateFormat getBirthdate() {
+	public Date getBirthdate() {
 		return birthdate;
 	}
-	public void setBirthdate(UserDateFormat birthdate) {
+	public void setBirthdate(Date birthdate) {
 		this.birthdate = birthdate;
 	}
 	public String getName() {

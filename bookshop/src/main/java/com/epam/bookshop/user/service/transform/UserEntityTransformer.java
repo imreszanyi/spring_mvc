@@ -1,17 +1,17 @@
 package com.epam.bookshop.user.service.transform;
 
+import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import org.springframework.stereotype.Component;
 
-import com.epam.bookshop.book.domain.Book;
-import com.epam.bookshop.book.repository.domain.BookEntity;
 import com.epam.bookshop.user.domain.User;
-import com.epam.bookshop.user.domain.UserDateFormat;
 import com.epam.bookshop.user.repository.domain.UserEntity;
-
 
 @Component
 public class UserEntityTransformer {
@@ -28,7 +28,16 @@ public class UserEntityTransformer {
 		result.setName(user.getName());
 		result.setEmail(user.getEmail());
 		result.setPassword(user.getPassword());
-		result.setBirthdate(UserDateFormat.getByString(user.getBirthdate()));
+		
+		DateFormat format = new SimpleDateFormat("yyyy-mm-dd");
+		Date date = null;
+		try {
+			date = format.parse(user.getBirthdate());
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		if (date == null) date = new Date();
+		result.setBirthdate(date);
 		return result;
 	}
 	
@@ -37,7 +46,7 @@ public class UserEntityTransformer {
 		result.setName(user.getName());
 		result.setEmail(user.getEmail());
 		result.setPassword(user.getPassword());
-		result.setBirthdate(user.getBirthdate().getDisplayName());
+		result.setBirthdate(user.getBirthdate().toString());
 		return result;
 	}
 	
