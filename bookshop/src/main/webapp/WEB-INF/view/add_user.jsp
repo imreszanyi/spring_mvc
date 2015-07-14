@@ -29,19 +29,19 @@
         <c:if test="${not empty message}">
           <div class="alert alert-success">${message}</div>
         </c:if>
-        <form:form modelAttribute="addBookRequest" action="addBookPost.html">
+        <form:form modelAttribute="addUserRequest" action="addUserPost.html">
           <div class="form-group">
             <p>
-              <label for="input_title">Title</label>
-              <form:input path="title" id="input_title" class="form-control" placeholder="Title" />
+              <label for="input_name">Name</label>
+              <form:input path="name" id="input_name" class="form-control" placeholder="Name" />
             </p>
             <p>
-              <label for="input_author">Author</label>
-              <form:input path="author" id="input_author" class="form-control" placeholder="Author" />
+              <label for="input_email">Email</label>
+              <form:input path="email" id="input_email" class="form-control" placeholder="Email" />
             </p>
             <p>
-              <label for="input_synopsis">Synopsis</label>
-              <form:textarea path="synopsis" id="input_synopsis" class="form-control" placeholder="Synopsis" />
+              <label for="input_password">Password</label>
+              <form:input path="password" id="input_password" class="form-control" placeholder="Password" />
             </p>
           </div>
           <p>

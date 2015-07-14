@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import com.epam.bookshop.book.domain.Book;
+import com.epam.bookshop.book.repository.domain.BookEntity;
 import com.epam.bookshop.user.domain.User;
 import com.epam.bookshop.user.repository.domain.UserEntity;
 
@@ -21,6 +23,14 @@ public class UserEntityTransformer {
 
 	public User transformUserEntity(UserEntity user) {
 		User result = new User();
+		result.setName(user.getName());
+		result.setEmail(user.getEmail());
+		result.setPassword(user.getPassword());
+		return result;
+	}
+	
+	public UserEntity transformUserToUserEntity(User user) {
+		UserEntity result = new UserEntity();
 		result.setName(user.getName());
 		result.setEmail(user.getEmail());
 		result.setPassword(user.getPassword());
