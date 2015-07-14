@@ -4,6 +4,14 @@ public class UserSummaryView {
 	private String name;
 	private String email;
 	private String password;
+	private String birthdate;
+	
+	public String getBirthdate() {
+		return birthdate;
+	}
+	public void setBirthdate(String birthdate) {
+		this.birthdate = birthdate;
+	}
 	public String getName() {
 		return name;
 	}

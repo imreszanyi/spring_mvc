@@ -39,6 +39,13 @@
               <label for="input_email">Email</label>
               <form:input path="email" id="input_email" class="form-control" placeholder="Email" />
             </p>
+            
+            <p>
+              <label for="input_birthdate">Birthdate</label>
+              <form:input path="birthdate" id="input_birthdate" type="date"/>
+              <!-- items="${addUserFormModel.availableBookFormats}" />  -->
+            </p>
+            
             <p>
               <label for="input_password">Password</label>
               <form:password path="password" id="input_password" class="form-control" placeholder="Password" />

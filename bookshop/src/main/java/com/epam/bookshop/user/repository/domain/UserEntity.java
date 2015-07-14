@@ -15,7 +15,14 @@ public class UserEntity implements Serializable {
 	private String name;
 	private String email;
 	private String password;
+	private String birthdate;
 	
+	public String getBirthdate() {
+		return birthdate;
+	}
+	public void setBirthdate(String birthdate) {
+		this.birthdate = birthdate;
+	}
 	public Long getId() {
 		return id;
 	}

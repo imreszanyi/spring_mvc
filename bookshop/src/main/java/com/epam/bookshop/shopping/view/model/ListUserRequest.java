@@ -3,6 +3,7 @@ package com.epam.bookshop.shopping.view.model;
 public class ListUserRequest {
 	private String name;
 	private String email;
+	
 	public String getName() {
 		return name;
 	}
