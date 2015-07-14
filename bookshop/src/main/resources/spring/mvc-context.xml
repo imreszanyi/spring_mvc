@@ -19,6 +19,7 @@
     <property name="formatters">
       <set>
         <ref bean="bookFormatFormatter" />
+        <ref bean="userFormatFormatter" />
       </set>
     </property>
   </bean>
