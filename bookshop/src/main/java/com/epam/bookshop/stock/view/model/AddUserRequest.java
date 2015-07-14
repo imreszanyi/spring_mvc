@@ -9,8 +9,8 @@ import org.hibernate.validator.constraints.Email;
 
 public class AddUserRequest {
 	
-	@NotNull
-	@Size(min = 1, max = 100)
+	//@NotNull
+	//@Size(min = 1, max = 100)
 	private String name;
 	
 	@NotNull
