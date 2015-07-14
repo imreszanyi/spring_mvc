@@ -11,15 +11,15 @@ import org.springframework.stereotype.Component;
 import com.epam.bookshop.user.domain.UserDateFormat;
 
 @Component
-public class UserFormatFormatter implements Formatter<UserDateFormat> {
+public class UserFormatFormatter implements Formatter<Date> {
 
 	@Override
-	public String print(UserDateFormat userFormat, Locale locale) {
-		return userFormat.getDisplayName();
+	public String print(Date userFormat, Locale locale) {
+		return userFormat.toString();
 	}
 
 	@Override
-	public UserDateFormat parse(String text, Locale locale) throws ParseException {
+	public Date parse(String text, Locale locale) throws ParseException {
 		return UserDateFormat.getByString(text);
 	}
 

@@ -16,7 +16,7 @@ public class UserDateFormat {
 		return date.toString();
 	}
 
-	public static UserDateFormat getByString(String dateString){
+	public static Date getByString(String dateString){
 		UserDateFormat result  = null;
 		DateFormat format = new SimpleDateFormat("yyyy-mm-dd", Locale.ENGLISH);
 		Date date = null;
@@ -25,8 +25,7 @@ public class UserDateFormat {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		result.date = date;
-		return result;
+		return date;
 	}
 	
 }
