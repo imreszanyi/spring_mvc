@@ -31,7 +31,7 @@ public class UserTransformer {
 		result.setName(user.getName());
 		result.setEmail(user.getEmail());
 		result.setPassword(user.getPassword());
-		result.setBirthdate(conversionService.convert(user.getBirthdate(), String.class));
+		result.setBirthdate(user.getBirthdate().toString());
 		return result;
 	}
 }

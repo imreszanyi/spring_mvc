@@ -46,7 +46,11 @@ public class UserEntityTransformer {
 		result.setName(user.getName());
 		result.setEmail(user.getEmail());
 		result.setPassword(user.getPassword());
-		result.setBirthdate(user.getBirthdate().toString());
+		if (user.getBirthdate() != null) {
+			result.setBirthdate(user.getBirthdate().toString());
+		} else {
+			result.setBirthdate("1970-01-01");
+		}
 		return result;
 	}
 	

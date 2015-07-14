@@ -47,7 +47,7 @@
             <tr>
               <td>${users.name}</td>
               <td>${users.email}</td>
-              <td><spring:eval expression="users.birthDate" /></td>
+              <td><spring:eval expression="users.birthdate" /></td>
               <td>${users.password}</td>
             </tr>
           </c:forEach>

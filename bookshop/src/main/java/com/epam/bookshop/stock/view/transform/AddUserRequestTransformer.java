@@ -12,6 +12,7 @@ public class AddUserRequestTransformer {
 		result.setName(addUserRequest.getName());
 		result.setEmail(addUserRequest.getEmail());
 		result.setPassword(addUserRequest.getPassword());
+		//result.setBirthdate(addUserRequest.getBirthdate());
 		return result;
 	}
 }
