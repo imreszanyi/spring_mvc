@@ -45,7 +45,6 @@
             <p>
               <label for="input_birthdate">Birthdate</label>
               <form:input path="birthdate" id="input_birthdate" type="date"/>
-              <!-- items="${addUserFormModel.availableBookFormats}" />  -->
             </p>
             
             <p>

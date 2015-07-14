@@ -2,12 +2,31 @@ package com.epam.bookshop.stock.view.model;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+
 public class AddUserRequest {
-	 private String name;
-	 private String email;
-	 private String password;
-	 private Date birthdate;
-	 private String passwordConfirm;
+	
+	@NotNull
+	@Size(min = 1, max = 100)
+	private String name;
+	
+	@NotNull
+	@Email
+	@Size(min = 1, max = 100)
+	private String email;
+
+	private Date birthdate;
+
+	@NotNull
+	@Size(min = 6, max = 12)
+	private String password;
+
+	@NotNull
+	@Size(min = 6, max = 12)
+	private String passwordConfirm;
 	 
 	public Date getBirthdate() {
 		return birthdate;
