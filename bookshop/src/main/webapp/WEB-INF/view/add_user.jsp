@@ -21,6 +21,7 @@
           <li><a href="<c:url value='/' />">Home</a></li>
           <li><a href="<c:url value='/shopping.html' />">Bookstore</a></li>
           <li><a href="<c:url value='/addBookForm.html' />">Manage books</a></li>
+          <li><a href="<c:url value='/users.html' />">Users</a></li>
           <li><a href="<c:url value='/addUserForm.html' />">Manage Users</a></li>
         </ul>
       </div>
@@ -28,24 +29,25 @@
         <c:if test="${not empty message}">
           <div class="alert alert-success">${message}</div>
         </c:if>
-        <form:form modelAttribute="addBookRequest" action="addBookPost.html">
+        <form:form modelAttribute="addUserRequest" action="addUserPost.html">
           <div class="form-group">
             <p>
-              <label for="input_title">Title</label>
-              <form:input path="title" id="input_title" placeholder="Title" />
+              <label for="input_name">Name</label>
+              <form:input path="name" id="input_name" class="form-control" placeholder="Name" />
             </p>
             <p>
-              <label for="input_author">Author</label>
-              <form:input path="author" id="input_author" placeholder="Author" />
+              <label for="input_email">Email</label>
+              <form:input path="email" id="input_email" class="form-control" placeholder="Email" />
             </p>
             <p>
-              <label for="input_format">Format</label>
-              <form:select path="format" id="input_format" items="${addBookFormModel.availableBookFormats}" />
+              <label for="input_password">Password</label>
+              <form:password path="password" id="input_password" class="form-control" placeholder="Password" />
             </p>
             <p>
-              <label for="input_synopsis">Synopsis</label>
-              <form:textarea path="synopsis" id="input_synopsis" placeholder="Synopsis" />
-            </p>            
+              <label for="input_passwordConfirm">Password again</label>
+              <form:input path="passwordConfirm" type="password" id="input_passwordConfirm" class="form-control" placeholder="Password confirm" />
+              
+            </p>
           </div>
           <p>
             <button type="submit" class="btn btn-default">Add</button>
