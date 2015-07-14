@@ -36,19 +36,16 @@ public class AddUserPostController {
     	
     	if (addUserRequest.getName().isEmpty()) {
     		redirectAttributes.addFlashAttribute("message", "enter name");
-    	}
-    	
-    	if (addUserRequest.getEmail().isEmpty()) {
+    	} else if  (addUserRequest.getEmail().isEmpty()) {
     		redirectAttributes.addFlashAttribute("message", "enter email");
-    	}
-    	
-	   	if (addUserRequest.getPassword().equals(addUserRequest.getPasswordConfirm())) {
+    	} else if (addUserRequest.getPassword().equals(addUserRequest.getPasswordConfirm())) {
 	        userWriteService.saveUser(addUserRequestTransformer.transformAddUserRequestToUser(addUserRequest));
-	        redirectAttributes.addFlashAttribute("message", String.format("Book '%s' of '%s' saved!", addUserRequest.getName(), addUserRequest.getEmail(), addUserRequest.getPassword()));
+	        redirectAttributes.addFlashAttribute("message", String.format("User '%s' of '%s' saved!", addUserRequest.getName(), addUserRequest.getEmail(), addUserRequest.getPassword()));
 	   	} else {
+	   		//redirectAttributes.addFlashAttribute("message", 
 	   		redirectAttributes.addFlashAttribute("message", "passwords don't not match");
+	   		
 	   	}
-        
 	   	
 	   	return "redirect:addUserForm.html";
 
