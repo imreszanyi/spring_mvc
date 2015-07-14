@@ -37,9 +37,9 @@ public class AddUserPostController {
 	   	if (addUserRequest.getPassword().equals(addUserRequest.getPasswordConfirm())) {
 	        userWriteService.saveUser(addUserRequestTransformer.transformAddUserRequestToUser(addUserRequest));
 	        redirectAttributes.addFlashAttribute("message", String.format("Book '%s' of '%s' saved!", addUserRequest.getName(), addUserRequest.getEmail(), addUserRequest.getPassword()));
-	        return "redirect:addBookForm.html";
+	        return "redirect:addUserForm.html";
 	   	} else {
-	   		return "redirect:addBookForm.html";
+	   		return "redirect:addUserForm.html";
 	   	}
     }
 	
