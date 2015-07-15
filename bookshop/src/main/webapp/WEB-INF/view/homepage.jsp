@@ -29,6 +29,8 @@
               </c:forEach>
             </div>
           <li>
+          <li><a href="<c:url value='/users.html' />">Users</a></li>
+          <li><a href="<c:url value='/addUserForm.html' />">Manage Users</a></li>
         </ul>
       </div>
       <div id="content">
