@@ -38,6 +38,10 @@ public class UserSearchService {
 		return userDao.findAll();
 	}
 	
+	public List<User> listAllUsers() {
+        return transformUserEntities(userDao.findAll());
+    }
+	
 	private String formatQuery(String name) {
 		String result;
 		if (name == null) {
