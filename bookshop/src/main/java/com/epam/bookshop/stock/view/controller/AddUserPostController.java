@@ -32,7 +32,7 @@ public class AddUserPostController {
     }
     
     @RequestMapping(value = "/addUserPost.html", method = RequestMethod.POST)
-    private String createUser(AddUserRequest addUserRequest, RedirectAttributes redirectAttributes) {
+    public String createUser(AddUserRequest addUserRequest, RedirectAttributes redirectAttributes) {
     	
     	if (addUserRequest.getName().isEmpty()) {
     		redirectAttributes.addFlashAttribute("message", "enter name");
