@@ -10,7 +10,6 @@
     <form-login login-page="/login.html" default-target-url="/" authentication-failure-url="/login.html" password-parameter="password"
       username-parameter="username" />
     <logout logout-success-url="/" />
-    <csrf/>
   </http>
 
   <authentication-manager>
