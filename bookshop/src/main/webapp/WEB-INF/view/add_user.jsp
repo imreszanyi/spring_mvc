@@ -34,25 +34,28 @@
             <p>
               <label for="input_name">Name</label>
               <form:input path="name" id="input_name" class="form-control" placeholder="Name" />
+               <form:errors path="name" element="div" cssClass="validation-error"/>   
             </p>
             <p>
               <label for="input_email">Email</label>
               <form:input path="email" id="input_email" class="form-control" placeholder="Email" />
+               <form:errors path="email" element="div" cssClass="validation-error"/>   
             </p>
             
             <p>
               <label for="input_birthdate">Birthdate</label>
               <form:input path="birthdate" id="input_birthdate" type="date"/>
-              <!-- items="${addUserFormModel.availableBookFormats}" />  -->
             </p>
             
             <p>
               <label for="input_password">Password</label>
               <form:password path="password" id="input_password" class="form-control" placeholder="Password" />
+               <form:errors path="password" element="div" cssClass="validation-error"/>   
             </p>
             <p>
               <label for="input_passwordConfirm">Password again</label>
               <form:input path="passwordConfirm" type="password" id="input_passwordConfirm" class="form-control" placeholder="Password confirm" />
+              <form:errors path="passwordConfirm" element="div" cssClass="validation-error"/>   
               
             </p>
           </div>
