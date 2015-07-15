@@ -43,7 +43,7 @@ public class BookSearchService {
 		if (title == null) {
 			result = "%";
 		} else {
-			result = String.format("%%%s%%", title);
+			result = "%" + title + "%";  //String.format("%%%s%%", title);
 		}
 		return result;
 	}

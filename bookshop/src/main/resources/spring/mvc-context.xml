@@ -10,7 +10,7 @@
   <context:component-scan base-package="com.epam.bookshop" />
 
   <mvc:annotation-driven conversion-service="bookshopConversionService" />
-
+  
   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     <property name="prefix" value="/WEB-INF/view/" />
     <property name="suffix" value=".jsp" />
@@ -20,6 +20,7 @@
     <property name="formatters">
       <set>
         <ref bean="bookFormatFormatter" />
+        <ref bean="userFormatFormatter" />
       </set>
     </property>
   </bean>

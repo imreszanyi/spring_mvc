@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Welcome</title>
-<link rel="stylesheet" href="<spring:theme code='style'/>" type="text/css" media="all">
+<link rel="stylesheet" href="<c:url value='/assets/style.css' />" type="text/css" media="all">
 </head>
 <body>
   <div id="layout-one-fixed">
@@ -40,6 +40,9 @@
               </c:forEach>
             </div>
           <li>
+          <li><a href="<c:url value='/addBookForm.html' />">Manage books</a></li>
+          <li><a href="<c:url value='/users.html' />">Users</a></li>
+          <li><a href="<c:url value='/addUserForm.html' />">Manage Users</a></li>
         </ul>
       </div>
       <div id="content">
