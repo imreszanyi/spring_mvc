@@ -12,48 +12,52 @@ import com.epam.bookshop.book.service.transform.BookEntityTransformer;
 
 @Service
 public class BookSearchService {
-	private BookDao bookDao;
-	private BookEntityTransformer bookEntityTransformer;
+    private BookDao bookDao;
+    private BookEntityTransformer bookEntityTransformer;
 
-	@Autowired
-	public BookSearchService(BookDao bookDao, BookEntityTransformer bookEntityTransformer) {
-		super();
-		this.bookDao = bookDao;
-		this.bookEntityTransformer = bookEntityTransformer;
-	}
+    @Autowired
+    public BookSearchService(BookDao bookDao, BookEntityTransformer bookEntityTransformer) {
+        super();
+        this.bookDao = bookDao;
+        this.bookEntityTransformer = bookEntityTransformer;
+    }
 
-	public Book findBook(Long bookId) {
-		return transformBookEntity(doFindBook(bookId));
-	}
+    public Book findBook(Long bookId) {
+        return transformBookEntity(doFindBook(bookId));
+    }
 
-	private Book transformBookEntity(BookEntity book) {
-		return bookEntityTransformer.transformBookEntity(book);
-	}
+    public List<Book> listAllBooks() {
+        return transformBookEntities(bookDao.findAll());
+    }
 
-	private BookEntity doFindBook(Long bookId) {
-		return bookDao.findOne(bookId);
-	}
+    private Book transformBookEntity(BookEntity book) {
+        return bookEntityTransformer.transformBookEntity(book);
+    }
 
-	public List<Book> listBooks(String title) {
-		return transformBookEntities(findBookEntities(formatQuery(title)));
-	}
+    private BookEntity doFindBook(Long bookId) {
+        return bookDao.findOne(bookId);
+    }
 
-	private String formatQuery(String title) {
-		String result;
-		if (title == null) {
-			result = "%";
-		} else {
-			result = "%" + title + "%";  //String.format("%%%s%%", title);
-		}
-		return result;
-	}
+    public List<Book> listBooks(String title) {
+        return transformBookEntities(findBookEntities(formatQuery(title)));
+    }
 
-	private List<Book> transformBookEntities(Iterable<BookEntity> books) {
-		return bookEntityTransformer.transformBookEntities(books);
-	}
+    private String formatQuery(String title) {
+        String result;
+        if (title == null) {
+            result = "%";
+        } else {
+            result = String.format("%%%s%%", title);
+        }
+        return result;
+    }
 
-	private Iterable<BookEntity> findBookEntities(String title) {
-		return bookDao.findByTitleIgnoreCaseLike(title);
-	}
+    private List<Book> transformBookEntities(Iterable<BookEntity> books) {
+        return bookEntityTransformer.transformBookEntities(books);
+    }
+
+    private Iterable<BookEntity> findBookEntities(String title) {
+        return bookDao.findByTitleIgnoreCaseLike(title);
+    }
 
 }
