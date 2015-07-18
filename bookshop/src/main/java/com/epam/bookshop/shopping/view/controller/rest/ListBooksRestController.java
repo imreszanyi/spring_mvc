@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.epam.bookshop.book.service.BookSearchService;
@@ -27,4 +28,5 @@ public class ListBooksRestController {
     public List<BookSummaryView> clients() {
         return bookTransformer.transformBooksToSummaries(bookSearchService.listAllBooks());
     }
+    
 }

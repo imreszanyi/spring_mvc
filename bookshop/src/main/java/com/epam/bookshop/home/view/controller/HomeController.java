@@ -3,9 +3,13 @@ package com.epam.bookshop.home.view.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.config.authentication.UserServiceBeanDefinitionParser;
+import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.epam.bookshop.authentication.service.AuthenticationService;
 import com.epam.bookshop.authentication.view.controller.LoginFormController;
@@ -54,4 +58,19 @@ public class HomeController {
 	public String homepage() {
 		return "homepage";
 	}
+	
+	
+	@ModelAttribute("result")
+	public long square(@RequestParam("number") long number, Model model) {
+		model.addAttribute("number", number);
+		return number * number; 
+	}
+	
+	@RequestMapping("/square")
+	public String getSquare() {
+		return "square";
+		
+	}
+	
+	
 }
